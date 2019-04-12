@@ -1,8 +1,36 @@
 # Yet Another DataTables Column Filter (yadcf) Change-log
 
+ 
+## 0.9.4 is in beta (grab latest stable from https://github.com/vedmack/yadcf/releases)
 
-
-## 0.9.3 is in beta (grab latest stable from https://github.com/vedmack/yadcf/releases)
+* Added (by @misanek) "regex" filtering mode checkbox (currently available for the text filter) - https://github.com/vedmack/yadcf/pull/490
+* Added babel transpiled version (es5) in /build folder
+* Fixed cumulative filtering issue (not calling proper dt api / version) 
+* Added "column_selector" - more flexability in column selectors (instead of hard coded column_number)- https://github.com/vedmack/yadcf/issues/513
+* Support for stateSave with serverSide currently only for filter_type: 'text'
+* Support Date Range Picker plugin (datepicker_type: 'daterangepicker') - https://github.com/vedmack/yadcf/issues/537
+* Misc bug fixed issues:
+	https://github.com/vedmack/yadcf/issues/469 - Cannot apply style_class on date filter
+	https://github.com/vedmack/yadcf/issues/470 - filter_delay not working on range_date
+	https://github.com/vedmack/yadcf/issues/482 - Autocomplete is not reading filter_plugin_options
+	https://github.com/vedmack/yadcf/issues/493 - Set the state preselected value only if the option exists in the select dropdown
+	https://github.com/vedmack/yadcf/issues/510 - Can't handle null value case in deep data properties
+	https://github.com/vedmack/yadcf/issues/522 - Selectize bug (initSelectPluginCustomTriggers 'select_type': 'custom_select' )
+	https://github.com/vedmack/yadcf/issues/524 - range_date filter with bootstrap-datetimepicker date format issue (moment_date_format)
+	https://github.com/vedmack/yadcf/issues/500 - multi_select not working "The select2('close') method was called on an element that is not using Select2.
+    https://github.com/vedmack/yadcf/issues/530 - Using Select2 with ajax load multiselect my tags are removed instantly.
+    https://github.com/vedmack/yadcf/issues/531 - Ctrl+A does not work inside text searches.
+	https://github.com/vedmack/yadcf/issues/534 - initMultipleTables trows a TypeError: "tablesArray[i] is undefined"
+	https://github.com/vedmack/yadcf/issues/540 - Individual Search Columns in the footer with ScrollX not searching properly 
+	https://github.com/vedmack/yadcf/issues/552 - Error when using orthogonal data and text_data_delimiter (support columns.data.filter)
+	https://github.com/vedmack/yadcf/issues/554 - DT render not working properly - range number / slider filters
+	https://github.com/vedmack/yadcf/issues/557 - startsWith being ignored when exclude option set
+	https://github.com/vedmack/yadcf/issues/553 - Using orthogonal data and text_data_delimiter with columns.data function
+	https://github.com/vedmack/yadcf/issues/535 - Feature request: DataTables Editor DateTime picker support.
+	https://github.com/vedmack/yadcf/issues/562 - multi_select_custom_func not considered in exGetColumnFilterVal
+	https://github.com/vedmack/yadcf/issues/564 - Error undefinded ColumnObj with ServerSide, Range_Number and Custom_Range_Delimiter
+	
+## 0.9.3
 
 * Added support for col reorder in range filters - https://github.com/vedmack/yadcf/issues/429
 * Added new datepicker_type: 'bootstrap-datepicker', (use it with moment library) make sure you set separate date format for the plugin and for moment library -
@@ -16,6 +44,10 @@
 	https://github.com/vedmack/yadcf/issues/442 - Date picker is still shown on click of another input filed
 	https://github.com/vedmack/yadcf/issues/450 - Select2 stay opened when clicking on another field
 	https://github.com/vedmack/yadcf/issues/456 - beta 16 error Uncaught TypeError: Object.entries is not a function
+	https://github.com/vedmack/yadcf/issues/459 - Empty lists with type 'selector' re-add previous list as object
+	https://github.com/vedmack/yadcf/issues/455 - Data is hidden when initialising a range_number_slider on a fully data empty column
+	https://github.com/vedmack/yadcf/issues/461 - Problem with ColReorder and column without filter
+	https://github.com/vedmack/yadcf/issues/457 - new div is created every time date selected (date-range) + selection (inuse class) not removed when using clear button bug
 
 ## 0.9.2
 
@@ -79,7 +111,7 @@
 * Add regex for filter_match_mode property (xmikew)
 * Added `alphaNum` and `custom` to the `sort_as` and added `sort_as_custom_func`
 * New property, style_class - allows adding additional class/classes to filter 
-* Added and exclude filtering checkbox (currently available for the text filter)
+* Added "exclude" filtering checkbox (currently available for the text filter)
 * New property, append_data_to_table_data to place your data array in addition to the values that yadcf grabs from the table
 * Aded support for Select2 v.4.0 
 * Added exResetFilters function to reset specific filters (one or more) https://github.com/vedmack/yadcf/issues/162
